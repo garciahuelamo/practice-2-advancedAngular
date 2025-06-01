@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,20 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'module-2';
+  title: string;
+  private router;
+
+  constructor(){
+    this.router = inject(Router)
+    this.title = 'module-2';
+  }
+  
+  onTable(){
+    this.router.navigate(['/table']);
+  }
+
+  onForm(){
+    this.router.navigate(['/form']); 
+  }
+
 }

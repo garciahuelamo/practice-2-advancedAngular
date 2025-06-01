@@ -1,1 +1,15 @@
-<p>form-element works!</p>
+<h1>{{ title }}</h1>
+
+<form [formGroup]="dataForm">
+
+  <input formControlName="name" placeholder="Name" />
+  <input formControlName="surname" placeholder="Surname" />
+  <input formControlName="email" placeholder="Email" />
+  <input formControlName="phone" placeholder="Phone" />
+  <input formControlName="birthday" placeholder="Birthday" />
+  <input formControlName="city" placeholder="City" />
+  <input formControlName="address" placeholder="Address" />
+  <br><br>
+  <button *ngIf="dataForm.valid" (click)="onSubmit()" type="submit">Submit</button>
+
+</form>
