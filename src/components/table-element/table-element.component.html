@@ -1,0 +1,30 @@
+<h1>{{ title }}</h1>
+
+<table border="1">
+    <thead [ngStyle]="{ color: color, 'font-size.px': fontSize }">
+        <tr>
+            <th *ngIf="showName">Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th *ngIf="showBirthday">Birthday</th>
+            <th>City</th>
+            <th *ngIf="showAddress">Address</th>
+            <th *ngIf="showOccupation">Occupation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td *ngIf="showName">{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td *ngIf="showBirthday">{{ user.birthday }}</td>
+            <td>{{ user.city }}</td>
+            <td *ngIf="showAddress">{{ user.address }}</td>
+            <td *ngIf="showOccupation">{{ user.occupation }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="toggle()">Toggle theme</button>
